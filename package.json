@@ -3,17 +3,28 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "ml": "knex migrate:latest",
+    "mr": "knex migrate:rollback",
+    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand --silent"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BloomInstituteOfTechnology/web-sprint-challenge-adding-data-persistence.git"
+    "url": "git+https://github.com/LambdaSchool/web-sprint-challenge-adding-data-persistence.git"
   },
   "license": "ISC",
   "devDependencies": {
     "cross-env": "7.0.3",
-    "eslint": "8.4.1",
-    "jest": "27.4.3",
+    "eslint": "8.0.1",
+    "jest": "27.3.1",
     "supertest": "6.1.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "knex": "^0.95.11",
+    "nodemon": "^2.0.14",
+    "sqlite3": "^5.0.2"
   }
 }
